@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Genesis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Analysis Results</h1>
+        <p>Your skin analysis indicates: <strong>{{ prediction }}</strong></p>
+        {% if prediction == 'Acne' %}
+        <p>Check out this remedy: <a href="https://www.medicalnewstoday.com/articles/322455" target="_blank">Acne Remedies</a></p>
+        {% elif prediction == 'Pimple' %}
+        <p>Check out this remedy: <a href="https://www.clinikally.com/blogs/news/how-to-cure-pimples-at-home" target="_blank">Pimple Remedies</a></p>
+        {% else %}
+        <p>Stay hydrated and maintain a proper skincare routine!</p>
+        {% endif %}
+        <a href="{{ url_for('index') }}">Go Back</a>
+    </div>
+</body>
+</html>
